@@ -2,7 +2,10 @@
   <ul class="nav navbar-nav navbar-right">
     {{#if currentUser}}
       <li class="dropdown">
-        <a aria-expanded="false" aria-haspopup="true" class="dropdown-toggle" data-toggle="dropdown" href="#" role="button">Dropdown
+        <a aria-expanded="false" aria-haspopup="true" class="dropdown-toggle" data-toggle="dropdown" href="#" role="button">
+          <img alt="" class="img-circle navbar-user-img" src="/img/noimage.png"/>
+          {{currentUser.profile.firstName}}
+          {{currentUser.profile.lastName}}
           <span class="caret"></span>
         </a>
         <ul class="dropdown-menu">

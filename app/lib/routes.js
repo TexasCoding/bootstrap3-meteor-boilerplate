@@ -4,7 +4,9 @@ Router.configure({
   notFoundTemplate: 'NotFound'
 });
 
-
+/**
+* STATIC
+*/
 Router.route('/', {
   name: 'StaticHome',
   controller: 'StaticHomeController',
@@ -23,6 +25,9 @@ Router.route('/contact', {
   where: 'client'
 });
 
+/**
+* Auth
+*/
 Router.route('/login', {
   name: 'AuthLogin',
   controller: 'AuthLoginController',
@@ -35,6 +40,16 @@ Router.route('/register', {
   where: 'client'
 });
 
+Router.route('/forgot_password', {
+  name: 'AuthForgotPassword',
+  controller: 'AuthForgotPasswordController',
+  where: 'client'
+});
+
+
+/**
+* USERS
+*/
 Router.route('/users/:_id/profile', {
   name: 'UsersProfile',
   controller: 'UsersProfileController',

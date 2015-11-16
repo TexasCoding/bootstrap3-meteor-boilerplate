@@ -28,6 +28,13 @@ Meteor.methods({
 
 
   },
+  isRegisteredEmail: function(email){
+    var user = Meteor.users.findOne({
+      "emails.address": email.toLowerCase()
+    });
+
+    return user ? true : false;
+  },
   accountsIsUsernameAvailable: function(username) {
     var user = Meteor.users.findOne({
       username: username
@@ -37,7 +44,7 @@ Meteor.methods({
   },
   accountsIsEmailAvailable: function(email) {
     var user = Meteor.users.findOne({
-      "emails.address": email
+      "emails.address": email.toLowerCase()
     });
 
     return user ? false : true;

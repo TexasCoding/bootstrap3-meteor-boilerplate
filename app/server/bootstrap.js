@@ -1,2 +1,6 @@
-Meteor.startup(function () {
+Meteor.startup(function() {
+  Accounts.emailTemplates.resetPassword.text = function(user, url) {
+    url = url.replace('#/', '');
+    return "Click this link to reset your password: " + url;
+  };
 });

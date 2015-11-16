@@ -5,7 +5,7 @@ Template.AuthLogin.events({
   "submit #authLogin": function(event) {
     event.preventDefault();
 
-    var email = $('[name=email]').val();
+    var email = $('[name=email]').val().toLowerCase();
     var password = $('[name=password]').val();
 
     Meteor.loginWithPassword(email, password, function(err) {

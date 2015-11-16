@@ -6,7 +6,7 @@ Template.AuthRegister.events({
     e.preventDefault();
 
     var user = {
-      email: $('[name=email]').val(),
+      email: $('[name=email]').val().toLowerCase(),
       password: $('[name=password]').val(),
       profile: {
         firstName: $('[name="profile.firstName"]').val(),
