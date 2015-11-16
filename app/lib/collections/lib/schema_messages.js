@@ -20,6 +20,7 @@ SimpleSchema.messages({
     passwordMissmatch: "[label] does not match",
     notVaildEmail: "[label] is not registered",
     notUnique: "[label] must be unique",
+    passwordSame: "[label] is same as current password.",
     regEx: [{
         msg: "Is not a valid [label]"
     }, {

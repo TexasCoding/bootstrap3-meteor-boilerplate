@@ -56,6 +56,12 @@ Router.route('/reset_password/:token', {
 /**
  * USERS
  */
+ Router.route('/users/:_id/change_passwword', {
+   name: 'UsersChangePassword',
+   controller: 'UsersChangePasswordController',
+   where: 'client'
+ });
+
 Router.route('/users/:_id/profile', {
   name: 'UsersProfile',
   controller: 'UsersProfileController',

@@ -17,6 +17,7 @@
         {{currentUser.profile.address.zip}}
       </address>
       <a class="btn btn-warning" href="{{pathFor 'UsersProfileEdit' _id=currentUser._id}}">Edit Profile</a>
+      <a class="btn btn-danger" href="{{pathFor 'UsersChangePassword' _id=currentUser._id}}">Change Password</a>
     </div>
   </div>
 </template>
