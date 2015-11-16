@@ -8,12 +8,12 @@ Template.AuthForgotPassword.events({
     var email = $('[name=email]').val().toLowerCase();
 
     if (email) {
-      var verify = Accounts.forgotPassword({
+      Accounts.forgotPassword({
         email: email
       });
       Session.set('loadingState', false);
       FlashMessages.clear();
-      FlashMessages.sendInfo('Sent a reset password link to ' + email + '.');
+      FlashMessages.sendInfo('Sent a reset password link to <b>' + email + '</b>.');
     } else {
       Session.set('loadingState', false);
       FlashMessages.clear();
