@@ -1,3 +1,3 @@
 .idea
-build/bundle
+build/**
 config/production/env.sh
