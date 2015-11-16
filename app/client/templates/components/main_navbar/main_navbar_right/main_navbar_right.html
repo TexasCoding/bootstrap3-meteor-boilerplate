@@ -1,0 +1,31 @@
+<template name="MainNavbarRight">
+  <ul class="nav navbar-nav navbar-right">
+    {{#if currentUser}}
+      <li class="dropdown">
+        <a aria-expanded="false" aria-haspopup="true" class="dropdown-toggle" data-toggle="dropdown" href="#" role="button">Dropdown
+          <span class="caret"></span>
+        </a>
+        <ul class="dropdown-menu">
+          <li>
+            <a href="{{pathFor 'UsersProfile' _id=currentUser._id}}">Profile</a>
+          </li>
+          <li class="divider" role="separator"></li>
+          <li>
+            <a class="logout" href="#">
+              <i class="fa fa-sign-out"></i>Logout</a>
+          </li>
+        </ul>
+      </li>
+      {{else}}
+      <li class="{{isActiveRoute 'AuthLogin'}}">
+        <a href="{{pathFor 'AuthLogin'}}">
+          <i class="fa fa-sign-in"></i>Login</a>
+      </li>
+      <li class="{{isActiveRoute 'AuthRegister'}}">
+        <a href="{{pathFor 'AuthRegister'}}">
+          <i class="fa fa-plus"></i>Register</a>
+      </li>
+    {{/if}}
+
+  </ul>
+</template>

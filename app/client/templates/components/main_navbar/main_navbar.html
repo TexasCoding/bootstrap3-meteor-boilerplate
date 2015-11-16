@@ -1,0 +1,25 @@
+<template name="MainNavbar">
+  <div class="main-navbar">
+    <nav class="navbar navbar-default navbar-fixed-top">
+      <div class="container">
+        <div class="navbar-header">
+          <button aria-controls="navbar" aria-expanded="false" class="navbar-toggle collapsed" data-target="#navbar" data-toggle="collapse" type="button">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="{{pathFor 'StaticHome'}}">Boostrap3 Boilerplate</a>
+        </div>
+        <div class="navbar-collapse collapse" id="navbar">
+          <!-- LEFT -->
+          {{> MainNavbarLeft}}
+          <!-- RIGHT -->
+          {{> MainNavbarRight}}
+        </div>
+        <!--/.nav-collapse -->
+      </div>
+    </nav>
+  </div>
+
+</template>
