@@ -1,3 +1,2 @@
 .idea
 build/**
-config/production/env.sh

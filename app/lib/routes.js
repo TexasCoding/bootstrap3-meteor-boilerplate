@@ -5,8 +5,8 @@ Router.configure({
 });
 
 /**
-* STATIC
-*/
+ * STATIC
+ */
 Router.route('/', {
   name: 'StaticHome',
   controller: 'StaticHomeController',
@@ -26,8 +26,8 @@ Router.route('/contact', {
 });
 
 /**
-* Auth
-*/
+ * Auth
+ */
 Router.route('/login', {
   name: 'AuthLogin',
   controller: 'AuthLoginController',
@@ -46,10 +46,16 @@ Router.route('/forgot_password', {
   where: 'client'
 });
 
+Router.route('/reset_password/:token', {
+  name: 'AuthResetPassword',
+  controller: 'AuthResetPasswordController',
+  where: 'client'
+});
+
 
 /**
-* USERS
-*/
+ * USERS
+ */
 Router.route('/users/:_id/profile', {
   name: 'UsersProfile',
   controller: 'UsersProfileController',
