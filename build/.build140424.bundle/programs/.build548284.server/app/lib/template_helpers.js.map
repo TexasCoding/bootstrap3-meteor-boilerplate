@@ -1,0 +1,1 @@
+{"version":3,"sources":["meteor://💻app/lib/template_helpers.js"],"names":[],"mappings":";;;;;;;;AAAA,UAAU,CAAC,cAAc,CAAC,cAAc,EAAE,YAAY;AAClD,WAAO,OAAO,CAAC,GAAG,CAAC,cAAc,CAAC,CAAC;CACtC,CAAC,CAAC,sE","file":"/lib/template_helpers.js","sourcesContent":["Handlebars.registerHelper('loadingState', function () {\n    return Session.get(\"loadingState\");\n});\n"]}
