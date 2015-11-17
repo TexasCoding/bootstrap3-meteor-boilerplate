@@ -11,15 +11,21 @@
 
 # Routing
 [iron:router](https://atmospherejs.com/iron/router)
+
 [zimme:active-route](https://atmospherejs.com/zimme/active-route)
 
 # Collections
 [aldeed:collection2](https://atmospherejs.com/aldeed/collection2)
+
 [aldeed:autoform](https://atmospherejs.com/aldeed/autoform)
 
 # Styles
 [less](https://atmospherejs.com/meteor/less)
+
 [huttonr:bootstrap3](https://atmospherejs.com/huttonr/bootstrap3)
+
 [fortawesome:fontawesome](https://atmospherejs.com/fortawesome/fontawesome)
+
 [mrt:flash-messages](https://atmospherejs.com/mrt/flash-messages)
+
 [sacha:spin](https://atmospherejs.com/sacha/spin)
