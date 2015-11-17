@@ -4,6 +4,7 @@
 Template.AuthForgotPassword.events({
   "submit #authForgotPassword": function(e, tmpl) {
     e.preventDefault();
+
     Session.set('loadingState', true);
     var email = $('[name=email]').val().toLowerCase();
 

@@ -7,13 +7,13 @@ Template.AuthResetPassword.events({
 
     var password = $('[name=password]').val();
 
-    var token = Router.current().params.token;
-
-    Accounts.resetPassword(token, password, function(err) {
+    Accounts.resetPassword(Session.get("RESET_PASSWORD"), password, function(err) {
       if (err) {
+        Session.set("RESET_PASSWORD", "");
         FlashMessages.clear();
         FlashMessages.sendError('There was an error resetting your password.');
       } else {
+        Session.set("RESET_PASSWORD", "");
         FlashMessages.clear();
         FlashMessages.sendInfo('Your password has been reset, and you have been logged in.');
         Router.go('UsersProfile', {
@@ -34,7 +34,11 @@ Template.AuthResetPassword.helpers({
 /*****************************************************************************/
 /* AuthResetPassword: Lifecycle Hooks */
 /*****************************************************************************/
-Template.AuthResetPassword.onCreated(function() {});
+Template.AuthResetPassword.onCreated(function() {
+  if(Accounts._resetPasswordToken) {
+    Session.set("RESET_PASSWORD", Accounts._resetPasswordToken);
+   }
+});
 
 Template.AuthResetPassword.onRendered(function() {});
 

@@ -33,9 +33,9 @@ AuthResetPasswordController = RouteController.extend({
   onBeforeAction: function() {
     if (Meteor.loggingIn()) {
       this.render('Loading');
-    } else {
-      this.next();
     }
+    Accounts._resetPasswordToken = this.params.token;
+    this.next();
   },
 
   // The same thing as providing a function as the second parameter. You can

@@ -52,16 +52,16 @@ Router.route('/reset_password/:token', {
   where: 'client'
 });
 
+Router.route('/:_id/change_passwword', {
+  name: 'AuthChangePassword',
+  controller: 'AuthChangePasswordController',
+  where: 'client'
+});
+
 
 /**
  * USERS
  */
- Router.route('/users/:_id/change_passwword', {
-   name: 'UsersChangePassword',
-   controller: 'UsersChangePasswordController',
-   where: 'client'
- });
-
 Router.route('/users/:_id/profile', {
   name: 'UsersProfile',
   controller: 'UsersProfileController',

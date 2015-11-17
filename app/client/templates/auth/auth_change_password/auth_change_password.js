@@ -1,8 +1,8 @@
 /*****************************************************************************/
-/* UsersChangePassword: Event Handlers */
+/* AuthChangePassword: Event Handlers */
 /*****************************************************************************/
-Template.UsersChangePassword.events({
-  "submit #usersChangePassword": function(e, tmpl) {
+Template.AuthChangePassword.events({
+  "submit #authChangePassword": function(e, tmpl) {
     e.preventDefault();
 
     var currentPassword = $('[name=currentPassword]').val();
@@ -27,19 +27,19 @@ Template.UsersChangePassword.events({
 });
 
 /*****************************************************************************/
-/* UsersChangePassword: Helpers */
+/* AuthChangePassword: Helpers */
 /*****************************************************************************/
-Template.UsersChangePassword.helpers({
+Template.AuthChangePassword.helpers({
   userEmail: function() {
     return Meteor.user().emails[0].address;
   }
 });
 
 /*****************************************************************************/
-/* UsersChangePassword: Lifecycle Hooks */
+/* AuthChangePassword: Lifecycle Hooks */
 /*****************************************************************************/
-Template.UsersChangePassword.onCreated(function() {});
+Template.AuthChangePassword.onCreated(function() {});
 
-Template.UsersChangePassword.onRendered(function() {});
+Template.AuthChangePassword.onRendered(function() {});
 
-Template.UsersChangePassword.onDestroyed(function() {});
+Template.AuthChangePassword.onDestroyed(function() {});
