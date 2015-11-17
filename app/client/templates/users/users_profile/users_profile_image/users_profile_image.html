@@ -1,0 +1,34 @@
+<template name="UsersProfileImage">
+  <div class="users-profile-image">
+    <div class="row">
+      <div class="col-md-12">
+        <img alt="" class="img-rounded" src="/img/noimage.png"/>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-12">
+        <!-- Button trigger modal -->
+        <button class="btn btn-info" data-target="#profileImage" data-toggle="modal" type="button">
+          Update Profile Image
+        </button>
+      </div>
+    </div>
+  </div>
+  {{#BootstrapModal title="Update Profile Image" modalName="profileImage"}}
+    <form id="usersProfileImage">
+      <div class="input-group">
+        <span class="input-group-btn">
+          <span class="btn btn-default btn-file">
+            Browse&hellip;
+            <input name="profileImage" type="file">
+          </span>
+        </span>
+        <input class="form-control" id="viewProfileImage" readonly type="text">
+      </div>
+      <hr>
+      <button class="btn btn-primary" type="submit">Update Profile Image</button>
+      <button class="btn btn-default pull-right" data-dismiss="modal" type="button">Close</button>
+      <span class="clearfix"></span>
+    </form>
+  {{/BootstrapModal}}
+</template>

@@ -1,0 +1,18 @@
+<template name="BootstrapModal">
+  <!-- Modal -->
+  <div aria-labelledby="{{modalName}}Label" class="modal fade" id="{{modalName}}" role="dialog" tabindex="-1">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button aria-label="Close" class="close" data-dismiss="modal" type="button">
+            <span aria-hidden="true">&times;</span>
+          </button>
+          <h4 class="modal-title" id="{{modalName}}Label">{{title}}</h4>
+        </div>
+        <div class="modal-body">
+        {{> UI.contentBlock}}
+        </div>
+      </div>
+    </div>
+  </div>
+</template>

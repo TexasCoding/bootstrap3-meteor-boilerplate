@@ -1,23 +1,33 @@
 <template name="UsersProfile">
-  <div class="row">
-    <div class="col-md-3">
-      <!-- left -->
-      <img alt="" class="profile-image" src="/img/noimage.png"/>
-    </div>
-    <div class="col-md-9">
-      <!-- right -->
-      <h2>{{currentUser.profile.firstName}}
-        {{currentUser.profile.lastName}}</h2>
-      <address>
-        <h4>Address</h4>
-        {{currentUser.profile.address.address1}}<br>
-        {{currentUser.profile.address.address2}}<br>
-        {{currentUser.profile.address.city}},
-        {{currentUser.profile.address.state}}
-        {{currentUser.profile.address.zip}}
-      </address>
-      <a class="btn btn-warning" href="{{pathFor 'UsersProfileEdit' _id=currentUser._id}}">Edit Profile</a>
-      <a class="btn btn-danger" href="{{pathFor 'AuthChangePassword' _id=currentUser._id}}">Change Password</a>
+  <div class="users-profile">
+    <div class="row">
+      <div class="col-md-2">
+        <!-- left -->
+        {{> UsersProfileImage}}
+      </div>
+      <div class="col-md-10">
+        {{#DefaultPanel title="User Profile"}}
+          <h2>{{currentUser.profile.firstName}}
+            {{currentUser.profile.lastName}}</h2>
+          <address>
+            <h4>Address</h4>
+            {{currentUser.profile.address.address1}}<br>
+            {{#if currentUser.profile.address.address2}}
+              {{currentUser.profile.address.address2}}<br>
+            {{/if}}
+            {{currentUser.profile.address.city}},
+            {{currentUser.profile.address.state}}
+            {{currentUser.profile.address.zip}}
+          </address>
+
+          <div class="actions">
+            <a class="btn btn-warning" href="{{pathFor 'UsersProfileEdit' _id=currentUser._id}}">Edit Profile</a>
+            <a class="btn btn-danger" href="{{pathFor 'AuthChangePassword' _id=currentUser._id}}">Change Password</a>
+          </div>
+
+        {{/DefaultPanel}}
+      </div>
     </div>
   </div>
+
 </template>
