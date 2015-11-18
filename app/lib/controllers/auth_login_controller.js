@@ -49,6 +49,19 @@ AuthLoginController = RouteController.extend({
   action: function() {
     this.render();
   },
-  onAfterAction: function() {},
+  onAfterAction: function() {
+    var title = 'Login' + ' | ' + SITE_TITLE;
+    var description = 'login to your account.';
+    SEO.set({
+      title: title,
+      meta: {
+        'description': description
+      },
+      og: {
+        'title': title,
+        'description': description
+      }
+    });
+  },
   onStop: function() {}
 });

@@ -49,6 +49,19 @@ AuthRegisterController = RouteController.extend({
   action: function() {
     this.render();
   },
-  onAfterAction: function() {},
+  onAfterAction: function() {
+    var title = 'Register Account' + ' | ' + SITE_TITLE;
+    var description = 'register new account.';
+    SEO.set({
+      title: title,
+      meta: {
+        'description': description
+      },
+      og: {
+        'title': title,
+        'description': description
+      }
+    });
+  },
   onStop: function() {}
 });
