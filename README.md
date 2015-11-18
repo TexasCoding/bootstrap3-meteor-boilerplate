@@ -8,22 +8,22 @@
 ## Included Packages
 > Meteor default packages insecure and autopublish are removed for security.
 
-# Accounts
+### Accounts
 [accounts-password](https://atmospherejs.com/meteor/accounts-password)
 
-# Routing
+### Routing
 [iron:router](https://atmospherejs.com/iron/router)
 
 [zimme:active-route](https://atmospherejs.com/zimme/active-route)
 
-# Collections
+### Collections
 [aldeed:collection2](https://atmospherejs.com/aldeed/collection2)
 
 [aldeed:autoform](https://atmospherejs.com/aldeed/autoform)
 
 [davidyaha:collection2-migrations](https://atmospherejs.com/davidyaha/collection2-migrations)
 
-# Styles
+### Styles
 [less](https://atmospherejs.com/meteor/less)
 
 [huttonr:bootstrap3](https://atmospherejs.com/huttonr/bootstrap3)
@@ -34,10 +34,10 @@
 
 [sacha:spin](https://atmospherejs.com/sacha/spin)
 
-# SEO
+### SEO
 [manuelschoebel:ms-seo](https://atmospherejs.com/manuelschoebel/ms-seo)
 
-# IMAGES
+### IMAGES
 [cfs:standard-packages](https://atmospherejs.com/cfs/standard-packages)
 
 [cfs:gridfs](https://atmospherejs.com/cfs/gridfs)
