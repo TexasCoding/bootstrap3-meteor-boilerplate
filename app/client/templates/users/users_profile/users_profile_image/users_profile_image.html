@@ -1,11 +1,9 @@
 <template name="UsersProfileImage">
-  {{#if loadingState}}
-    {{> Loading}}
-    {{else}}
+
   <div class="users-profile-image">
     <div class="row">
       <div class="col-md-12">
-        {{#if profileImage}}
+        {{#if profileImage.url}}
           <img alt="{{currentUser.profile.firstName}} {{currentUser.profile.lastName}}" class="img-rounded" src="{{profileImage.url}}"/>
           {{else}}
           <img alt="" class="img-rounded" src="/img/noimage.png"/>
@@ -21,5 +19,5 @@
       </div>
     </div>
   </div>
-  {{/if}}
+
 </template>
