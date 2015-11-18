@@ -1,7 +1,18 @@
 Router.configure({
   layoutTemplate: 'MasterLayout',
   loadingTemplate: 'Loading',
-  notFoundTemplate: 'NotFound'
+  notFoundTemplate: 'NotFound',
+  waitOn: function() {
+    if (Meteor.user()) {
+      Meteor.subscribe("profileImage", Meteor.user().profile.image.imageId);
+    }
+  },
+  action: function() {
+    if (!this.ready()) {
+      this.render('Loading');
+    }
+  }
+
 });
 
 /**

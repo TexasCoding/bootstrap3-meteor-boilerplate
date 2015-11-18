@@ -10,6 +10,13 @@ Schema.UserCountry = new SimpleSchema({
   }
 });
 
+Schema.ProfileImage = new SimpleSchema({
+  imageId: {
+    type: String,
+    optional: true
+  }
+});
+
 Schema.UserProfile = new SimpleSchema({
   firstName: {
     type: String,
@@ -65,7 +72,7 @@ Schema.UserProfile = new SimpleSchema({
     optional: true
   },
   image: {
-    type: String,
+    type: Schema.ProfileImage,
     optional: true
   },
   country: {

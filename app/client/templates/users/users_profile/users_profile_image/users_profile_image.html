@@ -2,33 +2,20 @@
   <div class="users-profile-image">
     <div class="row">
       <div class="col-md-12">
-        <img alt="" class="img-rounded" src="/img/noimage.png"/>
+        {{#if profileImage}}
+          <img alt="{{currentUser.profile.firstName}} {{currentUser.profile.lastName}}" class="img-rounded" src="{{profileImage.url}}"/>
+          {{else}}
+          <img alt="" class="img-rounded" src="/img/noimage.png"/>
+        {{/if}}
       </div>
     </div>
     <div class="row">
       <div class="col-md-12">
-        <!-- Button trigger modal -->
-        <button class="btn btn-info" data-target="#profileImage" data-toggle="modal" type="button">
-          Update Profile Image
-        </button>
+        <span class="btn btn-primary btn-file">
+          Change Profile Image
+          <input id="profileImage" name="profileImage" type="file">
+        </span>
       </div>
     </div>
   </div>
-  {{#BootstrapModal title="Update Profile Image" modalName="profileImage"}}
-    <form id="usersProfileImage">
-      <div class="input-group">
-        <span class="input-group-btn">
-          <span class="btn btn-default btn-file">
-            Browse&hellip;
-            <input name="profileImage" type="file">
-          </span>
-        </span>
-        <input class="form-control" id="viewProfileImage" readonly type="text">
-      </div>
-      <hr>
-      <button class="btn btn-primary" type="submit">Update Profile Image</button>
-      <button class="btn btn-default pull-right" data-dismiss="modal" type="button">Close</button>
-      <span class="clearfix"></span>
-    </form>
-  {{/BootstrapModal}}
 </template>

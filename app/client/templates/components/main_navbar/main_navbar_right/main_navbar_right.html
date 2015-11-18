@@ -3,7 +3,12 @@
     {{#if currentUser}}
       <li class="dropdown">
         <a aria-expanded="false" aria-haspopup="true" class="dropdown-toggle" data-toggle="dropdown" href="#" role="button">
-          <img alt="" class="img-circle navbar-user-img" src="/img/noimage.png"/>
+          <!-- <img alt="" class="img-circle navbar-user-img" src="/img/noimage.png"/> -->
+          {{#if profileImage}}
+            <img alt="{{currentUser.profile.firstName}} {{currentUser.profile.lastName}}" class="img-circle navbar-user-img" src="{{profileImage.url}}"/>
+            {{else}}
+            <img alt="" class="img-circle navbar-user-img" src="/img/noimage.png"/>
+          {{/if}}
           {{currentUser.profile.firstName}}
           {{currentUser.profile.lastName}}
           <span class="caret"></span>

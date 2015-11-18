@@ -26,4 +26,6 @@ aldeed:autoform
 accounts-password
 mrt:flash-messages
 sacha:spin
+cfs:standard-packages
+cfs:gridfs
 davidyaha:collection2-migrations

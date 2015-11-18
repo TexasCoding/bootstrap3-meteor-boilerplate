@@ -3,32 +3,32 @@
 /*****************************************************************************/
 
 Meteor.methods({
+  usersProfileImageUpdate: function(userId, imagesURL) {
+    return Meteor.users.update(userId, {
+      $set: imagesURL
+    });
+  },
   usersProfileUpdate: function(profile) {
-
     return Meteor.users.update({
       _id: Meteor.userId
     }, {
       $set: {
-        profile: {
-          firstName: profile.firstName,
-          lastName: profile.lastName,
-          phone: profile.phone,
-          fax: profile.fax,
-          cell: profile.cell,
-          address: {
-            address1: profile.address.address1,
-            address2: profile.address.address2,
-            city: profile.address.city,
-            state: profile.address.state,
-            zip: profile.address.zip
-          }
-        }
+        "profile.firstName": profile.firstName,
+        "profile.lastName": profile.lastName,
+        "profile.phone": profile.phone,
+        "profile.fax": profile.fax,
+        "profile.cell": profile.cell,
+        "profile.address.address1": profile.address.address1,
+        "profile.address.address2": profile.address.address2,
+        "profile.address.city": profile.address.city,
+        "profile.address.state": profile.address.state,
+        "profile.address.zip": profile.address.zip,
       }
     });
 
 
   },
-  isRegisteredEmail: function(email){
+  isRegisteredEmail: function(email) {
     var user = Meteor.users.findOne({
       "emails.address": email.toLowerCase()
     });

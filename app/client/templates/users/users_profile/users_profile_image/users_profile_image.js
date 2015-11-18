@@ -2,17 +2,34 @@
 /* UsersProfileImage: Event Handlers */
 /*****************************************************************************/
 Template.UsersProfileImage.events({
-  "change .btn-file": function(e, t) {
-    var fileName = $('[name=profileImage]').get(0).files[0].name;
-
-    console.log(fileName);
-
-    $('#viewProfileImage').val(fileName);
-  },
-  "submit #usersProfileImage": function(e, t){
+  "change #profileImage": function(e, t) {
     e.preventDefault();
 
-    
+    FS.Utility.eachFile(event, function(file) {
+      Images.insert(file, function(err, fileObj) {
+        if (err) {
+          FlashMessages.clear();
+          FlashMessages.sendError(err.reason);
+        } else {
+          var userId = Meteor.userId();
+          var imagesURL = {
+            "profile.image.imageId": fileObj._id
+          };
+
+          Meteor.call("usersProfileImageUpdate", userId, imagesURL, function(err, res) {
+            if (err) {
+              FlashMessages.clear();
+              FlashMessages.sendError(err.reason);
+            }
+            if (res) {
+              FlashMessages.clear();
+              FlashMessages.sendSuccess('Your profile image has been updated.');
+            }
+          });
+        }
+      });
+    });
+
   }
 });
 

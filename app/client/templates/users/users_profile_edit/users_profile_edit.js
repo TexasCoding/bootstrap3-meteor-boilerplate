@@ -24,7 +24,7 @@ Template.UsersProfileEdit.events({
         if (err) {
           Session.set('loadingState', false);
           FlashMessages.clear();
-          FlashMessages.sendSuccess('There were errors updating you profile.');
+          FlashMessages.sendError('There were errors updating you profile.');
         }
         if (res) {
           Session.set('loadingState', false);
