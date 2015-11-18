@@ -4,10 +4,12 @@
 Template.AuthResetPassword.events({
   "submit #authResetPassword": function(e, tmpl) {
     e.preventDefault();
+    Session.set('loadingState', true);
 
     var password = $('[name=password]').val();
 
     Accounts.resetPassword(Session.get("RESET_PASSWORD"), password, function(err) {
+      Session.set('loadingState', false);
       if (err) {
         Session.set("RESET_PASSWORD", "");
         FlashMessages.clear();
@@ -35,9 +37,9 @@ Template.AuthResetPassword.helpers({
 /* AuthResetPassword: Lifecycle Hooks */
 /*****************************************************************************/
 Template.AuthResetPassword.onCreated(function() {
-  if(Accounts._resetPasswordToken) {
+  if (Accounts._resetPasswordToken) {
     Session.set("RESET_PASSWORD", Accounts._resetPasswordToken);
-   }
+  }
 });
 
 Template.AuthResetPassword.onRendered(function() {});

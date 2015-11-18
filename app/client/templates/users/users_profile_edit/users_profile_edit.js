@@ -20,14 +20,14 @@ Template.UsersProfileEdit.events({
       }
     };
 
+    Meteor.setTimeout(function() {
       Meteor.call("usersProfileUpdate", profile, function(err, res) {
+        Session.set('loadingState', false);
         if (err) {
-          Session.set('loadingState', false);
           FlashMessages.clear();
           FlashMessages.sendError('There were errors updating you profile.');
         }
         if (res) {
-          Session.set('loadingState', false);
           FlashMessages.clear();
           FlashMessages.sendSuccess('Your profile has been updated.');
           Router.go('UsersProfile', {
@@ -35,6 +35,9 @@ Template.UsersProfileEdit.events({
           });
         }
       });
+    }, 5000);
+
+
   }
 });
 

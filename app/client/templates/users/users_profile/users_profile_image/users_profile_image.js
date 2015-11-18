@@ -4,8 +4,7 @@
 Template.UsersProfileImage.events({
   "change #profileImage": function(e, t) {
     e.preventDefault();
-
-
+    Session.set('loadingState', true);
 
     FS.Utility.eachFile(e, function(file) {
       Images.insert(file, function(err, fileObj) {
@@ -13,7 +12,7 @@ Template.UsersProfileImage.events({
           FlashMessages.clear();
           FlashMessages.sendError(err.reason);
         } else {
-          Session.set('loadingState', true);
+
           var userId = Meteor.userId();
           var imagesURL = {
             "profile.image.imageId": fileObj._id
@@ -26,7 +25,6 @@ Template.UsersProfileImage.events({
               FlashMessages.sendError(err.reason);
             }
             if (res) {
-              Session.set('loadingState', false);
               FlashMessages.clear();
               FlashMessages.sendSuccess('Your profile image has been updated.');
             }

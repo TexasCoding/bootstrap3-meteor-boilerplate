@@ -4,7 +4,7 @@
 Template.AuthRegister.events({
   'submit #authRegister': function(e, tmpl) {
     e.preventDefault();
-
+    Session.set('loadingState', true);
     var user = {
       email: $('[name=email]').val().toLowerCase(),
       password: $('[name=password]').val(),
@@ -28,6 +28,7 @@ Template.AuthRegister.events({
     };
 
     Accounts.createUser(user, function(err, res) {
+      Session.set('loadingState', false);
       if (err) {
         FlashMessages.clear();
         FlashMessages.sendError('There were errors creating your account.');

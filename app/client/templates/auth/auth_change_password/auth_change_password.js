@@ -4,12 +4,13 @@
 Template.AuthChangePassword.events({
   "submit #authChangePassword": function(e, tmpl) {
     e.preventDefault();
-
+    Session.set('loadingState', true);
     var currentPassword = $('[name=currentPassword]').val();
     var newPassword = $('[name=password]').val();
     var newPasswordRepeated = $('[name=passwordConfirmation]').val();
 
     Accounts.changePassword(currentPassword, newPassword, function(error) {
+      Session.set('loadingState', false);
       if (error) {
         FlashMessages.clear();
         FlashMessages.sendError('There was an error: ' + error.reason);
