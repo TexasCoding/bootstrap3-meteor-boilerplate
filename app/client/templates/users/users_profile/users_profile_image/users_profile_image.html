@@ -1,4 +1,7 @@
 <template name="UsersProfileImage">
+  {{#if loadingState}}
+    {{> Loading}}
+    {{else}}
   <div class="users-profile-image">
     <div class="row">
       <div class="col-md-12">
@@ -18,4 +21,5 @@
       </div>
     </div>
   </div>
+  {{/if}}
 </template>

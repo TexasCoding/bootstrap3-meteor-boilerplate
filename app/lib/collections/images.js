@@ -1,5 +1,23 @@
+var createProfileImage = function(fileObj, readStream, writeStream) {
+  // Transform the image into a 10x10px thumbnail
+  gm(readStream, fileObj.name())
+    .resize('200', '200', '^')
+    .gravity('Center')
+    .crop('200', '200')
+    .stream().pipe(writeStream);
+};
+
+
+
 Images = new FS.Collection("images", {
-  stores: [new FS.Store.GridFS("images", {})]
+  stores: [new FS.Store.GridFS("images", {
+    transformWrite: createProfileImage
+  })],
+  filter: {
+    allow: {
+      contentTypes: ['image/*'] //allow only images in this FS.Collection
+    }
+  }
 });
 
 if (Meteor.isServer) {
