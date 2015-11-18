@@ -1,16 +1,19 @@
 <template name="MasterLayout">
-  {{#if loadingState}}
-    {{> Loading}}
-    {{else}}
-    {{> MainNavbar}}
-    <div class="container">
-      <div class="row">
-        <div class="col-md-12">
+
+  {{> MainNavbar}}
+
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+        {{#if loadingState}}
+          {{> Loading}}
+          {{else}}
           {{> flashMessages}}
           {{> yield}}
-        </div>
+        {{/if}}
       </div>
     </div>
-    {{> MainFooter}}
-  {{/if}}
+  </div>
+  {{> MainFooter}}
+
 </template>

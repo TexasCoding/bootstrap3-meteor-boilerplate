@@ -4,7 +4,9 @@
 Template.UsersProfileEdit.events({
   "submit #usersProfileUpdate": function(e, tmpl) {
     e.preventDefault();
+
     Session.set('loadingState', true);
+    
     var profile = {
       firstName: $('[name="firstName"]').val(),
       lastName: $('[name="lastName"]').val(),
@@ -20,24 +22,20 @@ Template.UsersProfileEdit.events({
       }
     };
 
-    Meteor.setTimeout(function() {
-      Meteor.call("usersProfileUpdate", profile, function(err, res) {
-        Session.set('loadingState', false);
-        if (err) {
-          FlashMessages.clear();
-          FlashMessages.sendError('There were errors updating you profile.');
-        }
-        if (res) {
-          FlashMessages.clear();
-          FlashMessages.sendSuccess('Your profile has been updated.');
-          Router.go('UsersProfile', {
-            _id: Meteor.userId()
-          });
-        }
-      });
-    }, 5000);
-
-
+    Meteor.call("usersProfileUpdate", profile, function(err, res) {
+      Session.set('loadingState', false);
+      if (err) {
+        FlashMessages.clear();
+        FlashMessages.sendError('There were errors updating you profile.');
+      }
+      if (res) {
+        FlashMessages.clear();
+        FlashMessages.sendSuccess('Your profile has been updated.');
+        Router.go('UsersProfile', {
+          _id: Meteor.userId()
+        });
+      }
+    });
   }
 });
 
