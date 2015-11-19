@@ -5,6 +5,6 @@ Handlebars.registerHelper('profileImage', function() {
 });
 
 Handlebars.registerHelper('loadingState', function() {
-  if(Session.get('loadingState'))
+  if (Session.get('loadingState'))
     return true;
 });
