@@ -1,15 +1,16 @@
 # Bootstrap 3 Meteor Boilerplate
-### This is still a work in progress
+## This is still a work in progress
 > Currently this project includes a fully functional user login, registration, password reset, forgot password system and profile image.
-
 
 > This project is built using the great [iron-meter iron-cli](https://github.com/iron-meteor/iron-cli) tool. So this must be installed for proper setup.
 
 ## Included Packages
-> Meteor default packages insecure and autopublish are removed for security.
+> Meteor default packages [insecure](https://atmospherejs.com/meteor/insecure) and [autopublish](https://atmospherejs.com/meteor/autopublish) are removed for security.
 
 ### Accounts
 [accounts-password](https://atmospherejs.com/meteor/accounts-password)
+
+[alanning:roles](https://atmospherejs.com/alanning/roles)
 
 ### Routing
 [iron:router](https://atmospherejs.com/iron/router)
