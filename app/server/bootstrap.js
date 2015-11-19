@@ -10,7 +10,7 @@ Meteor.startup(function() {
   // FAKER USERS
   if (Meteor.users.find().count() < 10) {
 
-    if(!Meteor.users.find({email: 'admin@example.com'})){
+    if(!Meteor.users.find({username: 'admin'})){
       // CREATE ADMIN USER
       var adminUser = {
         username: 'admin',

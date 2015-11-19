@@ -4,7 +4,9 @@
 Template.AuthRegister.events({
   'submit #authRegister': function(e, tmpl) {
     e.preventDefault();
+
     Session.set('loadingState', true);
+
     var user = {
       username: $('[name=username]').val().toLowerCase(),
       email: $('[name=email]').val().toLowerCase(),
@@ -28,8 +30,10 @@ Template.AuthRegister.events({
       }
     };
 
-    Accounts.createUser(user, function(err, res) {
+    var id;
+    id = Accounts.createUser(user, function(err, res) {
       Session.set('loadingState', false);
+      
       if (err) {
         FlashMessages.clear();
         FlashMessages.sendError('There were errors creating your account.');
@@ -40,5 +44,7 @@ Template.AuthRegister.events({
       }
 
     });
+
+    Roles.addUsersToRoles(id, ["site-user"], Roles.GLOBAL_GROUP);
   }
 });
