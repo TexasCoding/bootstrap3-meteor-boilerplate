@@ -40,7 +40,7 @@
 ### SEO
 [manuelschoebel:ms-seo](https://atmospherejs.com/manuelschoebel/ms-seo)
 
-### IMAGES
+### Images
 [cfs:standard-packages](https://atmospherejs.com/cfs/standard-packages)
 
 [cfs:gridfs](https://atmospherejs.com/cfs/gridfs)
