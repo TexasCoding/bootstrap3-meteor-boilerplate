@@ -27,13 +27,6 @@ Template.AuthResetPassword.events({
 });
 
 /*****************************************************************************/
-/* AuthResetPassword: Helpers */
-/*****************************************************************************/
-Template.AuthResetPassword.helpers({
-
-});
-
-/*****************************************************************************/
 /* AuthResetPassword: Lifecycle Hooks */
 /*****************************************************************************/
 Template.AuthResetPassword.onCreated(function() {
@@ -41,7 +34,3 @@ Template.AuthResetPassword.onCreated(function() {
     Session.set("RESET_PASSWORD", Accounts._resetPasswordToken);
   }
 });
-
-Template.AuthResetPassword.onRendered(function() {});
-
-Template.AuthResetPassword.onDestroyed(function() {});

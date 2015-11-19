@@ -40,17 +40,3 @@ Template.UsersProfileEdit.events({
     });
   }
 });
-
-/*****************************************************************************/
-/* UsersProfileEdit: Helpers */
-/*****************************************************************************/
-Template.UsersProfileEdit.helpers({});
-
-/*****************************************************************************/
-/* UsersProfileEdit: Lifecycle Hooks */
-/*****************************************************************************/
-Template.UsersProfileEdit.onCreated(function() {});
-
-Template.UsersProfileEdit.onRendered(function() {});
-
-Template.UsersProfileEdit.onDestroyed(function() {});

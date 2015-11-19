@@ -33,12 +33,3 @@ Template.AuthChangePassword.helpers({
     return Meteor.user().emails[0].address;
   }
 });
-
-/*****************************************************************************/
-/* AuthChangePassword: Lifecycle Hooks */
-/*****************************************************************************/
-Template.AuthChangePassword.onCreated(function() {});
-
-Template.AuthChangePassword.onRendered(function() {});
-
-Template.AuthChangePassword.onDestroyed(function() {});

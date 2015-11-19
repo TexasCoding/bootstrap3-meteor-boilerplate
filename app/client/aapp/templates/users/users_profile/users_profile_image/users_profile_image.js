@@ -35,17 +35,3 @@ Template.UsersProfileImage.events({
 
   }
 });
-
-/*****************************************************************************/
-/* UsersProfileImage: Helpers */
-/*****************************************************************************/
-Template.UsersProfileImage.helpers({});
-
-/*****************************************************************************/
-/* UsersProfileImage: Lifecycle Hooks */
-/*****************************************************************************/
-Template.UsersProfileImage.onCreated(function() {});
-
-Template.UsersProfileImage.onRendered(function() {});
-
-Template.UsersProfileImage.onDestroyed(function() {});

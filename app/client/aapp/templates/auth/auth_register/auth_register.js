@@ -41,17 +41,3 @@ Template.AuthRegister.events({
     });
   }
 });
-
-/*****************************************************************************/
-/* AuthRegister: Helpers */
-/*****************************************************************************/
-Template.AuthRegister.helpers({});
-
-/*****************************************************************************/
-/* AuthRegister: Lifecycle Hooks */
-/*****************************************************************************/
-Template.AuthRegister.onCreated(function() {});
-
-Template.AuthRegister.onRendered(function() {});
-
-Template.AuthRegister.onDestroyed(function() {});

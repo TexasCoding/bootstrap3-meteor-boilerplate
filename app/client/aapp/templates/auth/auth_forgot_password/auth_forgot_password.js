@@ -22,17 +22,3 @@ Template.AuthForgotPassword.events({
     }
   }
 });
-
-/*****************************************************************************/
-/* AuthForgotPassword: Helpers */
-/*****************************************************************************/
-Template.AuthForgotPassword.helpers({});
-
-/*****************************************************************************/
-/* AuthForgotPassword: Lifecycle Hooks */
-/*****************************************************************************/
-Template.AuthForgotPassword.onCreated(function() {});
-
-Template.AuthForgotPassword.onRendered(function() {});
-
-Template.AuthForgotPassword.onDestroyed(function() {});

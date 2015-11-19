@@ -5,7 +5,7 @@ Template.AuthLogin.events({
   "submit #authLogin": function(event) {
     event.preventDefault();
     Session.set('loadingState', true);
-    
+
     var email = $('[name=email]').val().toLowerCase();
     var password = $('[name=password]').val();
 
@@ -21,22 +21,5 @@ Template.AuthLogin.events({
       }
     });
 
-
   }
 });
-
-/*****************************************************************************/
-/* AuthLogin: Helpers */
-/*****************************************************************************/
-Template.AuthLogin.helpers({
-
-});
-
-/*****************************************************************************/
-/* AuthLogin: Lifecycle Hooks */
-/*****************************************************************************/
-Template.AuthLogin.onCreated(function() {});
-
-Template.AuthLogin.onRendered(function() {});
-
-Template.AuthLogin.onDestroyed(function() {});

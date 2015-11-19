@@ -11,20 +11,3 @@ Template.MainNavbarRight.events({
     Router.go('StaticHome');
   }
 });
-/*****************************************************************************/
-/* MainNavbarRight: Helpers */
-/*****************************************************************************/
-Template.MainNavbarRight.helpers({
-});
-
-/*****************************************************************************/
-/* MainNavbarRight: Lifecycle Hooks */
-/*****************************************************************************/
-Template.MainNavbarRight.onCreated(function () {
-});
-
-Template.MainNavbarRight.onRendered(function () {
-});
-
-Template.MainNavbarRight.onDestroyed(function () {
-});
