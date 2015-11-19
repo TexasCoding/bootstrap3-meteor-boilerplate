@@ -14,6 +14,11 @@ AdminUsersController = RouteController.extend({
   // return Meteor.subscribe('post', this.params._id);
 
   waitOn: function () {
+    var userId = Meteor.userId();
+    return [
+      Meteor.subscribe("adminUsers", userId),
+      Meteor.subscribe("adminRoles", userId)
+    ];
   },
 
   // A data function that can be used to automatically set the data context for

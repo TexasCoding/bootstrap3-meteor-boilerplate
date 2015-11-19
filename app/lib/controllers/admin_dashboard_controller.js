@@ -12,7 +12,13 @@ AdminDashboardController = RouteController.extend({
   // this option and the subscriptions option above.
   // return Meteor.subscribe('post', this.params._id);
 
-  waitOn: function() {},
+  waitOn: function() {
+    var userId = Meteor.userId();
+    return [
+      Meteor.subscribe("adminUsers", userId),
+      Meteor.subscribe("adminRoles", userId)
+    ];
+  },
 
   // A data function that can be used to automatically set the data context for
   // our layout. This function can also be used by hooks and plugins. For

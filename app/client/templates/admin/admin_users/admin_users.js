@@ -8,6 +8,9 @@ Template.AdminUsers.events({
 /* AdminUsers: Helpers */
 /*****************************************************************************/
 Template.AdminUsers.helpers({
+  users: function(){
+    return Meteor.users.find({});
+  }
 });
 
 /*****************************************************************************/
