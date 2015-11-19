@@ -12,6 +12,8 @@
 
 [alanning:roles](https://atmospherejs.com/alanning/roles)
 
+[digilord:faker](https://atmospherejs.com/digilord/faker)
+
 ### Routing
 [iron:router](https://atmospherejs.com/iron/router)
 
@@ -44,3 +46,6 @@
 [cfs:gridfs](https://atmospherejs.com/cfs/gridfs)
 
 [cfs:graphicsmagick](https://atmospherejs.com/cfs/graphicsmagick)
+
+### Monitoring
+[meteorhacks:kadira](https://atmospherejs.com/meteorhacks/kadira)
