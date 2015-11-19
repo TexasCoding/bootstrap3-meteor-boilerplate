@@ -1,7 +1,10 @@
 AuthLoginController = RouteController.extend({
 
   onBeforeAction: function() {
-    if (Meteor.loggingIn()) {
+    if (Meteor.user()) {
+      Router.go('StaticHome');
+    }
+    else if (Meteor.loggingIn()) {
       this.render('Loading');
     } else {
       this.next();

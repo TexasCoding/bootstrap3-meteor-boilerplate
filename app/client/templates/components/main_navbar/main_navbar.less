@@ -2,6 +2,7 @@
 @bgHighlight: #0565b8;
 @colDefault: #e2e4e5;
 @colHighlight: #ffffff;
+@bgHighlightBorder: #035ea8;
 @dropDown: false;
 
 .main-navbar {
@@ -51,6 +52,8 @@
         > a:focus {
           color: @colHighlight;
           background-color: @bgHighlight;
+          border-right: 1px @bgHighlightBorder solid;
+          border-left: 1px @bgHighlightBorder solid;
         }
       }
       > .open {

@@ -1,0 +1,26 @@
+<template name="MainNavbarRightAdmin">
+
+    <li class="dropdown  main-navbar-right-admin">
+      <a aria-expanded="false" aria-haspopup="true" class="dropdown-toggle" data-toggle="dropdown" href="#" role="button">
+        <i class="fa fa-lock"></i>Admin
+        <span class="caret"></span>
+      </a>
+      <ul class="dropdown-menu">
+        <li>
+          <a href="{{pathFor 'AdminDashboard'}}"><i class="fa fa-dashboard"></i>Dashboard</a>
+        </li>
+        <li>
+          <a href="{{pathFor 'AdminUsers'}}"><i class="fa fa-users"></i>Users</a>
+        </li>
+        <li>
+          <a href="{{pathFor 'AdminRoles'}}"><i class="fa fa-user-secret"></i>Roles</a>
+        </li>
+        <li class="divider" role="separator"></li>
+        <li>
+          <a class="logout" href="#">
+            <i class="fa fa-sign-out"></i>Logout</a>
+        </li>
+      </ul>
+    </li>
+
+</template>

@@ -80,10 +80,22 @@ Router.route('/users/:_id/profile/edit', {
 });
 
 /**
-* ADMIN
-*/
+ * ADMIN
+ */
 Router.route('/admin/dashboard', {
   name: 'AdminDashboard',
   controller: 'AdminDashboardController',
+  where: 'client'
+});
+
+Router.route('/admin/users', {
+  name: 'AdminUsers',
+  controller: 'AdminUsersController',
+  where: 'client'
+});
+
+Router.route('/admin/roles', {
+  name: 'AdminRoles',
+  controller: 'AdminRolesController',
   where: 'client'
 });

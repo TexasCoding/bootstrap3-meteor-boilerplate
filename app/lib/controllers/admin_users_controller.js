@@ -1,18 +1,20 @@
-AdminDashboardController = RouteController.extend({
+AdminUsersController = RouteController.extend({
 
   // A place to put your subscriptions
   // this.subscribe('items');
   // // add the subscription to the waitlist
   // this.subscribe('item', this.params._id).wait();
 
-  subscriptions: function() {},
+  subscriptions: function() {
+  },
 
   // Subscriptions or other things we want to "wait" on. This also
   // automatically uses the loading hook. That's the only difference between
   // this option and the subscriptions option above.
   // return Meteor.subscribe('post', this.params._id);
 
-  waitOn: function() {},
+  waitOn: function () {
+  },
 
   // A data function that can be used to automatically set the data context for
   // our layout. This function can also be used by hooks and plugins. For
@@ -20,23 +22,23 @@ AdminDashboardController = RouteController.extend({
   // returns a null value, and if so, renders the not found template.
   // return Posts.findOne({_id: this.params._id});
 
-  data: function() {},
+  data: function () {
+  },
 
   // You can provide any of the hook options
 
-  onRun: function() {
+  onRun: function () {
     this.next();
   },
-  onRerun: function() {
+  onRerun: function () {
     this.next();
   },
-  onBeforeAction: function() {
+  onBeforeAction: function () {
     if (Roles.userIsInRole(Meteor.user(), ['site-admin'], Roles.GLOBAL_GROUP)) {
       this.next();
     } else {
       Router.go('StaticHome');
     }
-
   },
 
   // The same thing as providing a function as the second parameter. You can
@@ -47,9 +49,11 @@ AdminDashboardController = RouteController.extend({
   // Example:
   //  action: 'myActionFunction'
 
-  action: function() {
+  action: function () {
     this.render();
   },
-  onAfterAction: function() {},
-  onStop: function() {}
+  onAfterAction: function () {
+  },
+  onStop: function () {
+  }
 });

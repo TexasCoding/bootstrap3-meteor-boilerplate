@@ -1,0 +1,27 @@
+<template name="MainNavbarRightUser">
+
+  <li class="dropdown main-navbar-right-user">
+    <a aria-expanded="false" aria-haspopup="true" class="dropdown-toggle" data-toggle="dropdown" href="#" role="button">
+      <!-- <img alt="" class="img-circle navbar-user-img" src="/img/noimage.png"/> -->
+      {{#if profileImage}}
+        <img alt="{{currentUser.profile.firstName}} {{currentUser.profile.lastName}}" class="img-circle navbar-user-img" src="{{profileImage.url}}"/>
+        {{else}}
+        <img alt="" class="img-circle navbar-user-img" src="/img/noimage.png"/>
+      {{/if}}
+      {{currentUser.profile.firstName}}
+      {{currentUser.profile.lastName}}
+      <span class="caret"></span>
+    </a>
+    <ul class="dropdown-menu">
+      <li>
+        <a href="{{pathFor 'UsersProfile' _id=currentUser._id}}">Profile</a>
+      </li>
+      <li class="divider" role="separator"></li>
+      <li>
+        <a class="logout" href="#">
+          <i class="fa fa-sign-out"></i>Logout</a>
+      </li>
+    </ul>
+  </li>
+
+</template>
