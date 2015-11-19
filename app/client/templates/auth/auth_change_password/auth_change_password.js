@@ -22,8 +22,6 @@ Template.AuthChangePassword.events({
         });
       }
     });
-
-
   }
 });
 
