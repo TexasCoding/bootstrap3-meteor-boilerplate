@@ -78,3 +78,12 @@ Router.route('/users/:_id/profile/edit', {
   controller: 'UsersProfileEditController',
   where: 'client'
 });
+
+/**
+* ADMIN
+*/
+Router.route('/admin/dashboard', {
+  name: 'AdminDashboard',
+  controller: 'AdminDashboardController',
+  where: 'client'
+});

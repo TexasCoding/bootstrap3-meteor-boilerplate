@@ -6,6 +6,7 @@ Template.AuthRegister.events({
     e.preventDefault();
     Session.set('loadingState', true);
     var user = {
+      username: $('[name=username]').val().toLowerCase(),
       email: $('[name=email]').val().toLowerCase(),
       password: $('[name=password]').val(),
       profile: {
