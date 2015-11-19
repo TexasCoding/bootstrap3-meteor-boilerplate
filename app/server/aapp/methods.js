@@ -8,9 +8,9 @@ Meteor.methods({
       $set: imagesURL
     });
   },
-  usersProfileUpdate: function(profile) {
+  usersProfileUpdate: function(userId, profile) {
     return Meteor.users.update({
-      _id: Meteor.userId
+      _id: userId
     }, {
       $set: {
         "profile.firstName": profile.firstName,

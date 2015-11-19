@@ -6,7 +6,9 @@ Template.UsersProfileEdit.events({
     e.preventDefault();
 
     Session.set('loadingState', true);
-    
+
+    var userId = Meteor.userId();
+
     var profile = {
       firstName: $('[name="firstName"]').val(),
       lastName: $('[name="lastName"]').val(),
@@ -22,7 +24,7 @@ Template.UsersProfileEdit.events({
       }
     };
 
-    Meteor.call("usersProfileUpdate", profile, function(err, res) {
+    Meteor.call("usersProfileUpdate", userId, profile, function(err, res) {
       Session.set('loadingState', false);
       if (err) {
         FlashMessages.clear();
