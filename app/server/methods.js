@@ -3,6 +3,13 @@
 /*****************************************************************************/
 
 Meteor.methods({
+  adminUsersDelete: function(userId) {
+    if (Roles.userIsInRole(Meteor.userId(), ['site-admin'], Roles.GLOBAL_GROUP)) {
+      return Meteor.users.remove({
+        _id: userId
+      });
+    }
+  },
   usersProfileImageUpdate: function(userId, imagesURL) {
     return Meteor.users.update(userId, {
       $set: imagesURL
