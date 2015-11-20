@@ -3,7 +3,9 @@
     {{#DefaultPanel title="Manage Users"}}
       <div class="row">
         <div class="col-md-12">
-          <button class="admin-create-user btn btn-success pull-right">Create User</button>
+          <button class="btn btn-success pull-right" data-target="#adminCreateUserModal" data-toggle="modal">
+            <i class="fa fa-plus"></i>Create User
+          </button>
         </div>
       </div>
       <table class="table table-responsive table-striped table-hover">
@@ -13,7 +15,7 @@
             <th>Email</th>
             <th>Roles</th>
             <th>Created</th>
-            <th>Actions</th>
+            <th></th>
           </tr>
         </thead>
         <tbody>
@@ -27,8 +29,8 @@
                 {{#each roles.__global_roles__}}{{.}}{{/each}}
               </td>
               <td>{{formatDate createdAt "short"}}</td>
-              <td class="actions">
-                <button class="btn btn-link">
+              <td class="actions text-right">
+                <button class="btn btn-link" data-target="#adminEditUserModal" data-toggle="modal">
                   <span class="text-warning">
                     <i class="fa fa-edit"></i>Edit</span>
                 </button>
@@ -43,4 +45,6 @@
       </table>
     {{/DefaultPanel}}
   </div>
+  {{> AdminUsersCreateModal}}
+  {{> AdminUsersEditModal}}
 </template>
