@@ -94,6 +94,12 @@ Router.route('/admin/users', {
   where: 'client'
 });
 
+Router.route('/admin/users/:_id/edit', {
+  name: 'AdminUsersEdite',
+  controller: 'AdminUsersEditController',
+  where: 'client'
+});
+
 Router.route('/admin/roles', {
   name: 'AdminRoles',
   controller: 'AdminRolesController',
